@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* .wrap {
+			overflow: hidden;
+			float: left;
+		}
+		.left {
+			float: left;
+			width: 200px;
+			height: 100px;
+			background: blue;
+		}
+		.right {
+			clear: both;
+			height: 200px;
+			background: red;
+			overflow: hidden;
+		} */
+		 .left {
+			float: left;
+			width: 200px;
+			height: 100px;
+			background: blue;
+		}
+		.right {
+			margin-left: 200px;
+			height: 200px;
+			background: red;
+		} 
+/*		.wrap {
+			font-size: 0;
+			letter-spacing: -4px;
+		}
+		.left {
+			display: inline-block;
+			width: 200px;
+			height: 100px;
+			background: blue;
+			font-size: 12px;
+		}
+		.right {
+			display: inline-block;
+			font-size: 12px;
+			margin-right: -200px;
+			width: 100%;
+			height: 100px;
+			background: red;
+		}*/
+		/*.wrap {
+			display: flex;
+		}
+		.left {
+			width: 200px;
+			height: 100px;
+			background: blue;
+		}
+		.right {
+			flex: 1;
+			height: 100px;
+			background: red;
+		}*/
+		/* .wrap {
+			display: flex;
+		}
+		.left {
+			width: 50%;
+			height: 100px;
+			background: blue;
+		}
+		.right {
+			margin-left: 10px;
+			width: 50%;
+			height: 100px;
+			background: red;
+		} */
+		.parent {
+			/*transform: translate(50px, 100px);*/
+			width: 200px;
+			height: 200px;
+			background: blue;
+		}
+		.children {
+			width: 100px;
+			height: 100px;
+			background: red;
+			border: 1px solid transParent;
+		}
+		.wrap1 {
+			font-size: 1.4rem;
+		}
+		.wrap2 {
+			font-size: 1.4rem;
+		}
+		.wrap3 {
+			font-size: 1.4rem;
+		}
+	</style>
+</head>
+<body>
+<ul id="ul1">
+	<li>
+		<div>
+			<p>111</p>
+		</div>
+	</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+<div class="wrap">
+	<div class="left">1</div>
+	<div class="right">2</div>
+</div>
+<div class="parent">
+	<div class="children"></div>
+</div>
+<canvas id="test-canvas">不支持canvas则显示此内容</canvas>
+<div class="wrap1">
+111
+	<div class="wrap2">
+	222
+		<div class="wrap3">333</div>
+	</div>
+</div>
+<div class="test-class"></div>
+<img src="../img/head.JPG" onmousewheel="zoomImg(this)"/>
+	<script>
+	function draw () {
+		var canvas = document.getElementById('test-canvas')
+		if(!canvas.getContext) return
+		var ctx = canvas.getContext('2d')
+		ctx.fillStyle = 'rgb(200, 0, 0)'
+		ctx.fillRect(10, 10, 55, 50)
+		ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (30, 30, 55, 50);
+	}
+	draw()
+	function zoomImg(obj){
+	    var zoom = parseInt(obj.style.zoom, 10) || 100;
+	    console.log(event.wheelDelta)
+	    console.log(obj.style.zoom)
+	    zoom += event.wheelDelta/12;
+	    if(zoom>0)
+	    obj.style.zoom = zoom + '%';
+	    return false;
+	}
+
+/*		function test(m,n,arr) {
+		    let score = 0
+		    let scoreArr = new Array(n)
+		    for (let i = 0; i< scoreArr.length; i++) {
+		    	scoreArr[i] = 0
+		    }
+			for (let i = 0; i< scoreArr.length; i++) {
+		    	for(let j =0; j<arr.length; j++) {
+		    		if((i+1) === arr[j]) {
+		    			scoreArr[i] ++
+		    		}
+		    	}
+		    }
+		    return Math.min.apply(null, scoreArr)
+		}
+		console.log(test(9,3,[1,1,2,2,2,3,1,2,3]))*/
+		
+/*		function sum (...args) {
+		  let arr = new Array()
+		  let sum = 0
+		  arr.push(...args)
+		  console.log(arr)
+		  for(let i = 0; i < arr.length; i++) {
+		    if (isNaN(arr[i])) {
+		      arr[i] = 0
+		    }
+		   sum += arr[i]
+		  }
+		  return sum.toFixed(3) * 1000 / 1000
+		}
+		console.log(sum(0.1,0.2))*/
+		
+		/*var time = new Date()
+		console.log(time)
+		time.setTime(time.getTime() + 30*60*1000)
+		console.log(time.getTime())
+		console.log(time.toGMTString())*/
+		/*document.getElementsByTagName('ul')[0].onclick = function (ev) {
+			var target = ev.target || ev.srcElement
+			console.log(target)
+			console.log(target.nodeName)
+			if(target.nodeName.toLowerCase() === 'li') {
+				console.log('lilili')
+			}
+		}*/
+		/*var t=3,timer;
+	    function sleep(){
+	        if(t<=0){
+	            clearTimeout(timer);
+	            alert("over");
+	            //一定要return，不然下面又创建了新的定时器
+	            return;
+	        }
+	        alert("hello");
+	        t--;
+	        timer = setTimeout("sleep()", 1000);
+	    }
+	    sleep();*/
+	    /*var i = 0;
+	    function sum () {
+	    	i++;
+	    	if(i<5) {
+	    		arguments.callee();
+	    	}
+	    }
+	    sum();
+	    console.log(i);*/
+	    /*function cuple (n, k ) {
+		    var count = 0
+		    for(let x =1; x<=n; x++) {
+		        for(let y = 1; y<=n; y++) {
+		            if(x%y >=k) {
+		                count++
+		            }
+		        }
+		    }
+		    console.log(count)
+		    return count
+		}
+		cuple(5,2)*/
+/*		function Test () {
+			this.name = 'test'
+			console.log(this)
+			console.log(this.name)
+		}
+		Test()
+		console.log(window.name)
+		var test = new Test()
+		console.log(test.name)*/
+		/*function Parent () {
+			this.type = 'parent'
+		}
+		function Child () {
+			this.name = 'zs',
+			this.age = 13
+		}
+		var parent = new Parent()
+		console.log(parent.__proto__)
+		console.log(Parent.prototype)
+		console.log(Parent.prototype.constructor)
+		Child.prototype = new Parent()
+		console.log(Child.prototype)
+		var obj = new Child()
+		console.log(obj.__proto__)
+		for(let i in obj) {
+			console.log(i+':'+obj[i])
+		}
+		Object.keys(obj).forEach(function(item,index) {
+			console.log(item + ':' + obj[item])
+		})
+		Object.getOwnPropertyNames(obj).forEach(function(item, index) {
+			console.log(item+ ':' + obj[item])
+		})*/
+		/*function* test() {
+			console.log(0)
+			yield 0
+			console.log(1)
+			yield 1
+			console.log(2)
+			yield 2
+			console.log(3)
+			return 3
+		}
+		let test1 = test()
+		test1.next()
+		test1.next() 
+		test1.next() 
+		test1.next() */
+		/*function test() {
+			console.log(11111)
+		}
+		var test1 = test()*/
+		/*var e = document.getElementsByClassName('test-class')
+		console.log(e)
+		e[0].classList.add('test-add')
+		console.log(e)
+		e[0].classList.toggle('test-add')
+		console.log(e)
+		console.log(e[0].classList.contains('test-add'))*/
+		/*var obj = {
+		  name : "zhar",
+		  say : function(){
+		    console.log(this.name);//zhar
+		  }
+		}
+		obj.say();*/
+		/*var name = 'tom';
+		var obj = {
+		  name : "zhar",
+		  say : function(){
+		    console.log(this.name);
+		  }
+		}
+		var fun = obj.say;
+		fun();*/
+		/*var name = 'tom';
+		var obj = {
+		  name : "zhar",
+		  say : function(){
+		  	var that = this
+		    return function(){
+		      console.log(that.name);
+		    }
+		  }
+		}
+		obj.say()();*/
+/*		var arr = [1,2]
+		console.log(Array.isArray(arr))
+		console.log(Object.prototype.toString.call(arr) == '[object Array]')
+		var arr = [1,1,2]
+		console.log(arr.indexOf(1))*/
+		/*function IsPC() {
+	        var userAgentInfo = navigator.userAgent;
+	        console.log(userAgentInfo)
+	        var Agents = ['Android', 'iPhone',
+	            'SymbianOS', 'Windows Phone',
+	            'iPad', 'iPod'
+	        ];
+	        var flag = true;
+	        for (var v = 0; v < Agents.length; v++) {
+	            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+	                flag = false;
+	                break;
+	            }
+	        }
+	        return flag;
+	    }
+	    console.log(IsPC())*/
+	    /*let a = [1,2,3]
+	    let b = [2,3,4]
+	    let union = new Set([...a,...b])
+	    console.log(union)
+	    console.log([...a,...b])*/
+	    /*var obj = new Proxy({}, {
+		  get: function (target, key, receiver) {
+		    console.log(`getting ${key}!`);
+		    return Reflect.get(target, key, receiver);
+		  },
+		  set: function (target, key, value, receiver) {
+		    console.log(`setting ${key}!`);
+		    return Reflect.set(target, key, value, receiver);
+		  }
+		});
+		obj.count = 1
+		++obj.count*/
+		/*async function f() {
+		  throw new Error('出错了');
+		}
+
+		f().then(
+		  v => console.log(v),
+		  e => console.log(e)
+		)*/
+		/*document.getElementById('ul1').addEventListener('click', function (ev) {
+			var event = ev || window.event
+			var target = event.target || event.srcElement
+			while(target.nodeName.toLowerCase() !== 'li') {
+				target = target.parentNode
+			}
+			console.log(target)
+		})*/
+		/*var arr = [1,2]
+		console.log(Object.prototype.toString.call(arr))*/
+		var arr = [1,2,3]
+
+		console.log(Math.max.apply(null,arr))
+	</script>
+</body>
+</html>

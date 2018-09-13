@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#container {width:1200px; height: 960px; } 
+	</style>
+	<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=d2db0a5f0f365b06a60f28999ea45f7c"></script>
+</head>
+<body>
+	<div id="container"></div> 
+	<script>
+		var map = new AMap.Map('container', {
+			layers: [
+				new AMap.TileLayer.Satellite(),
+				new AMap.TileLayer.RoadNet()
+			],
+			zooms: [4, 18],
+			zoom: 13
+		})
+/*		var trafficLayer = new AMap.TileLayer.Traffic({
+        zIndex: 10
+	    });
+	    map.add(trafficLayer);//添加图层到地图*/
+/*		var map = new AMap.Map('container', {
+        zoom:11,//级别
+        center: [116.397428, 39.90923],//中心点坐标
+        viewMode:'3D'//使用3D视图
+    });*/
+	</script>
+</body>
+</html>

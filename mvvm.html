@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <input type="text" id="text" value="">
+    <div class="btn" onclick="change()">change</div>
+	<script>
+		var input = document.querySelector("#text");
+		var data = {};
+		Object.defineProperty(data, "name", {
+		  configurable: true,
+		  get: function(){
+		      return input.value
+		  },
+		  set: function(newValue){
+		    //this.value = newValue;
+		    input.value = newValue;
+		  }
+		})
+		data.name = "sss";
+		input.onchange = function(){
+		  // data.name = data.name;
+		  console.log(data.name)
+		}
+		function change () {
+			data.name = "222";
+		}
+	</script>
+</body>
+</html>

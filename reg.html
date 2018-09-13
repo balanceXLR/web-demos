@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>/正则/</title>
+</head>
+<body>
+<script>
+// var str = '你好 我好 大家好'
+// var reg = /[^\s]+/g
+// console.log(reg.test(str))
+// console.log(str.match(reg))
+// var reg = new RegExp("/\D/")
+
+/*var str = '123456s'
+var reg = /\D/
+console.log(reg.test(str))*/
+
+
+/*var str = 'abcdef';
+var reg = /b/;
+console.log(str.search(reg))*/
+
+/*var str = 'dahdsa123adasda456adad789'
+var reg = /\d/g
+console.log(str.match(reg))*/
+
+/*var str = '你好张三：你是123'
+var reg = /你好|你是/g
+console.log(str.replace(reg, 'hello'))*/
+
+/*var str = '2018/7/11'
+var reg1 = /\d\/+/g
+var reg2 = /(\d\/)+/g
+var reg3 = /(\d)+(\/)+/g
+console.log(str.match(reg1))
+console.log(str.match(reg2))
+console.log(str.match(reg3))*/
+
+/*var str1 = '2018/7/11'
+var reg = /\//g
+var str2 = str.replace(reg, '-')
+console.log(str1)
+console.log(str2)*/
+
+/*var str = '<div class="b">hahahah </div>'
+var reg1 = /<[^>]+>/
+var reg2 = /<[\w\W]+>/g
+console.log(str.match(reg1))
+console.log(str.match(reg2))*/
+
+/*var str1 = 'onetwo'
+var str2 = 'one two'
+var reg = /one\b/
+console.log(reg.test(str1))
+console.log(reg.test(str2))*/
+
+/*var str = 'assssjdssskssalsssdkjsssdss';
+var arr = str.split('');
+str = arr.sort().join(''); 
+var value = '';
+var index = 0; 
+var re = /(\w)\1+/g;  //匹配字符，且重复这个字符，重复次数至少一次。
+str.replace(re,function(a,b){ 　　
+    if(index<a.length){
+          index = a.length;
+          value = b; 
+    }
+
+}); 
+console.log('最多的字符:'+value+',重复的次数:'+index);  // s   17*/
+
+// var qq = '1465799166'
+// var reg = /^[1-9]\d{4,11}$/
+// console.log(reg.test(qq))
+
+/*var str1 = '    abc    '
+var reg = /^\s+|\s+$/
+
+var str2 = str1.replace(reg,'')
+console.log(str1)
+console.log(str2)*/
+
+// var reg = /(^[1-9]\d{0,7}$)|(^[1-9]\d{0,6}\.\d$)|(^[1-9]\d{0,5}\.\d{1,2}$)|(^[1-9]\d{0,4}\.\d{1,3}$)|(^0\.\d{1,3}$)/ 
+
+/*var str = '  1 2 3  '
+var reg = /(^\s*)|(\s*$)/g
+console.log('=>' + str.trim() + '<=')
+console.log(str.replace(reg, ''))*/
+
+var str = 'abcabcabac'
+var reg = /(a)(b)(c)/
+console.log(str.match(reg))
+</script>
+</body>
+</html>

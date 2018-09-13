@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	function inner(data) {
+		console.log('callback'+ data)
+	}
+	function wrap(wrapData, callback) {
+		callback(wrapData)
+		console.log('wrap' + wrapData)
+	}
+	wrap(1, inner)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

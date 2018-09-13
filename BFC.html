@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wrap {
+			border: 1px solid black;
+			overflow: hidden;
+		}
+		.left {
+			/*float: left;*/
+			width: 200px;
+			height: 100px;
+			border: 1px solid red;
+		}
+		.right {
+			float: left;
+			/*clear: both;*/
+			margin-bottom: 20px;
+			height: 200px;
+			border: 1px solid blue;
+		}
+		.new-bfc {
+			/*overflow: hidden;*/
+			position: absolute;
+		}
+		.bottom {
+			margin-top: 20px;
+			height: 200px;
+			border: 1px solid green;
+		}
+		.flex-box {
+			display: flex;
+			align-items: stretch;
+		}
+		.item {
+			flex: 1;
+			/*height: 100px;*/
+		}
+		.flex-left {
+			height: 150px;
+			background: red;
+		}
+		.flex-center {
+			background: blue;
+		}
+		.flex-right {
+			background: green;
+		}
+		.bili-wrap {
+			width: 10vw;
+		}
+		.bili-content {
+			position: relative;
+			width: 100%;
+			padding-top: 100%;
+			border: 1px solid black;
+		}
+		.bili-text {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.parent {
+			/*border: 1px solid black;*/
+			overflow: hidden;
+			margin-left: auto;
+			padding-left: 10px;
+			width: 500px;
+			height: 500px;
+			background: yellow;
+		}
+		.child {
+			margin-top: 10px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="test1">1111</div>
+	<div class="wrap">
+		<div class="left">0</div>
+		<div class="right">1</div>
+		<!-- <div class="new-bfc">
+			<div class="bottom">2</div>
+		</div> -->
+	</div>
+	<div class="flex-box">
+		<div class="flex-left item"></div>
+		<div class="flex-center item"></div>
+		<div class="flex-right item"></div>
+	</div>
+	<div class="bili-wrap">
+		<div class="bili-content">
+			<div class="bili-text">111</div>
+		</div>
+	</div>
+	<div class="parent">
+		<div class="child"></div>
+	</div>
+</body>
+</html>

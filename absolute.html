@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .left {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            background: red;
+        }
+        .right {
+            margin-left: 14px;
+            width: 886px;
+            background: green;
+        }
+        .abs {
+            position: absolute;
+            /* margin-left: 300px; */
+            left: 300px;
+            width: 500px;
+            height: 400px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="left">
+            <div class="nav">nav</div>
+            <div class="abs">abs</div>
+        </div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>

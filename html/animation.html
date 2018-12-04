@@ -4,33 +4,74 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 <style>
+.wrap {
+	margin: 200px auto;
+	animation: rotate-wrap 5s infinite;
+	transform-style:preserve-3d;
+    /* transform:rotateX(-35deg) rotateY(30deg); */
+}
 .div1 {
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	background: red;
-	-webkit-animation: slider 4s infinite;
+	font-size: 16px;
+	text-align: center;
+	line-height: 100px;
 }
-@keyframes slider {
-	20% {
-		left: 0;
+.front {
+	background: red;
+	transform: translateZ(50px)
+	/* animation: rotate-front 5s infinite; */
+}
+.top {
+	transform: rotateX(90deg) translateZ(50px);
+	background: yellow;
+	/* animation: rotate-top 5s infinite; */
+}
+.behind {
+	transform: translateZ(-50px);
+	background: blue;
+	/* animation: rotate-behind 5s infinite; */
+}
+.bottom {
+	transform: rotateX(-90deg) translateZ(50px);
+	background: green;
+	/* animation: rotate-bottom 5s infinite; */
+}
+.left {
+	transform: rotateY(-90deg) translateZ(50px);
+	background: purple;
+}
+.right {
+	transform: rotateY(90deg) translateZ(50px);
+	background: pink;
+}
+
+@keyframes rotate-wrap {
+	25% {
+		transform: rotateX(-45deg) rotateY(45deg);
 	}
-	40% {
-		left: 100px;
+	50% {
+		transform: rotateX(-90deg) rotateY(90deg);
 	}
-	60% {
-		left: 100px;
-	}
-	80% {
-		left: 200px;
+	75% {
+		transform: rotateX(-135deg) rotateY(135deg);
 	}
 	100% {
-		left: 200px;
+		transform: rotateX(-180deg) rotateY(180deg)
 	}
 }
+
 </style>
 </head>
 <body>
-	<div class="div1"></div>
+	<div class="wrap">
+		<div class="div1 front">我是正面</div>
+		<div class="div1 top">我是上面</div>
+		<div class="div1 behind">我是背面</div>
+		<div class="div1 bottom">我是底面</div>
+		<div class="div1 left">我是左面</div>
+		<div class="div1 right">我是右面</div>
+	</div>
 </body>
 </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .example {
+            height: 100%;
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .header {
+            height: 50px;
+            text-align: center;
+            background: red;
+        }
+        .content {
+            flex: 1;
+            text-align: center;
+            background: green;
+            overflow: scroll;
+        }
+        .footer {
+            height: 50px;
+            text-align: center;
+            background: blue;
+        }
+        .test-div {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="example">
+    <section class="wrap">
+        <header class="header">header</header>
+        <section class="content">
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+            <div class="test-div">111</div>
+        </section>
+        <footer class="footer">footer</footer>
+    </section>
+</div>
+
+</body>
+
+</html>

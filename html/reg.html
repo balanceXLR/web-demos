@@ -88,9 +88,14 @@ var reg = /(^\s*)|(\s*$)/g
 console.log('=>' + str.trim() + '<=')
 console.log(str.replace(reg, ''))*/
 
-var str = 'abcabcabac'
-var reg = /(a)(b)(c)/
+// var str = 'abcabcabac'
+// var reg = /(a)(b)(c)/
+// console.log(str.match(reg))
+
+var str = '14:28'
+var reg = /(\d+)/g
 console.log(str.match(reg))
+
 </script>
 </body>
 </html>

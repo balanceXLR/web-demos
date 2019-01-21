@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../dependence/auto-compute-first-screen-time-master/dist/index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>111</div>
+    <script>
+        var autoComputeFirstScreenTime = window.autoComputeFirstScreenTime
+        autoComputeFirstScreenTime({
+            onReport: function (result) {
+                if (result.success) {
+                    console.log(result.firstScreenTime)
+                } else {
+                    console.log(result);
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

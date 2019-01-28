@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <div id="div"></div>
+    <button onclick="change()">change</button>
+    <script>
+        var input = document.getElementById('input')
+        let data = {}
+        Object.defineProperty(data, 'name', {
+            configurable: true,
+            enumerable: true,
+            set(val) {
+                console.log(val)
+                // TODO: add xss filter
+                input.value = val
+            },
+            get() {
+                return input.value
+            }
+        })
+        input.oninput = () => {
+            console.log(data)
+            document.getElementById('div').innerHTML = data.name
+        }
+        function change() {
+            // console.log(data)
+            for (let i in data) {
+                console.log(i)
+            }
+            // data.name = 'haha'
+        }
+    </script>
+</body>
+</html>

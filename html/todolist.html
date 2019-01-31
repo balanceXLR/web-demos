@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .match {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" oninput="getList()" class="input" />
+    </div>
+    <script>
+        var input = document.querySelector('.input')
+        let list = ['12211', '1221', '11', '333', '222']
+        function getList() {
+            clearList()
+            var keyword = input.value
+            if(keyword == '') return 
+            var reg = new RegExp(keyword, "g")
+            let originArr = list.filter(item => {
+                return item.match(reg)
+            })
+            let decoArr = originArr.map(item => {
+                return item.replace(reg, '<span class="match">' + keyword + '</span>')
+            })
+            generateList(decoArr)
+        }
+        function generateList(arr) {
+            var ul = document.createElement('ul')
+            ul.setAttribute('class', 'ul')
+            for(let text of arr) {
+                var li = document.createElement('li')
+                li.innerHTML = text
+                ul.appendChild(li) 
+            }
+            document.body.appendChild(ul)
+        }
+        function clearList() {
+            var ul = document.querySelector('.ul')
+            ul && document.body.removeChild(ul)
+        }
+    </script>
+</body>
+</html>

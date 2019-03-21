@@ -10,16 +10,17 @@
 <body>
     <div>111</div>
     <script>
-        var autoComputeFirstScreenTime = window.autoComputeFirstScreenTime
-        autoComputeFirstScreenTime({
-            onReport: function (result) {
-                if (result.success) {
-                    console.log(result.firstScreenTime)
-                } else {
-                    console.log(result);
-                }
-            }
-        });
+        console.log(!!window.MutationObserver)
+        // var autoComputeFirstScreenTime = window.autoComputeFirstScreenTime
+        // autoComputeFirstScreenTime({
+        //     onReport: function (result) {
+        //         if (result.success) {
+        //             console.log(result.firstScreenTime)
+        //         } else {
+        //             console.log(result);
+        //         }
+        //     }
+        // });
 
     </script>
 </body>

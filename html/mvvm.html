@@ -11,15 +11,26 @@
 	<script>
 		var input = document.querySelector("#text");
 		var data = {};
-		Object.defineProperty(data, "name", {
-		  configurable: true,
-		  get: function(){
-		      return input.value
-		  },
-		  set: function(newValue){
-		    //this.value = newValue;
-		    input.value = newValue;
-		  }
+		// Object.defineProperty(data, "name", {
+		//   configurable: true,
+		//   get: function(){
+		//       return input.value
+		//   },
+		//   set: function(newValue){
+		//     //this.value = newValue;
+		//     input.value = newValue;
+		//   }
+		// })
+		var newData = new Proxy(data, {
+			get (data, key, value) {
+				// console.log(data)
+				return data[key]
+			},
+			set(data, key, value) {
+				// console.log(data.name)
+				input.value = value
+				return Reflect.set(data, key, value)
+			}
 		})
 		data.name = "sss";
 		input.onchange = function(){
@@ -28,6 +39,8 @@
 		}
 		function change () {
 			data.name = "222";
+			// console.log(newData.name)
+			newData.name = "333"
 		}
 	</script>
 </body>

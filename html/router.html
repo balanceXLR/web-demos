@@ -20,8 +20,16 @@
             constructor() {
                 this.routes = {} // 记录路径标识符对应的cb
                 this.currentUrl = '' // 记录hash只为方便执行cb
-                window.addEventListener('load', () => this.render())
-                window.addEventListener('hashchange', () => this.render())
+                window.addEventListener('load', () => 
+                {
+                    console.log('load')
+                    return this.render()
+                })
+                window.addEventListener('hashchange', () => 
+                {
+                    console.log('hashchange')
+                    return this.render()
+                })
             }
             /* 注册路由和回调 */
             route(path, cb) {
